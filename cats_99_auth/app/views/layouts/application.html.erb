@@ -9,6 +9,19 @@
   </head>
 
   <body>
+  <header>
+  <%if !!current_user%>
+  <h2><%=@current_user.user_name%></h2>
+  <form action="session_url" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value = "Logout">
+  </form>
+  <%else%>
+  <a herf="<%=new_session_url%>"> Login </a>
+
+  <%end%>
+  
+  </header>
     <%= yield %>
   </body>
 </html>
