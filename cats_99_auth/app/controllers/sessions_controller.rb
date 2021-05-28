@@ -1,4 +1,4 @@
-class SessionsController < ApplicationRecord
+class SessionsController < ApplicationController
   def new
     render :new
   end
